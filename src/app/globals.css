@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Marca Los Árabes — extraída del logo */
+  --color-cream: #faf5ee;
+  --color-cream-dark: #f3ebdf;
+  --color-olive: #3c4530;
+  --color-olive-deep: #2b3323;
+  --color-gold: #b8912f;
+  --color-gold-light: #d4ab4e;
+  --color-charcoal: #12100d;
+  --color-coal: #1c1913;
+  --color-coal-soft: #26221a;
+
+  --font-display: var(--font-marcellus), ui-serif, Georgia, serif;
+  --font-body: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-cream text-olive-deep font-body antialiased;
+}
+
+/* Ornamento de separación estilo árabe */
+.ornament::before {
+  content: "❖";
+  @apply text-gold tracking-[0.6em] text-lg;
+}
+
+/* Patrón geométrico árabe sutil (fondos oscuros) */
+.pattern-arabesque {
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 46%, rgba(212, 171, 78, 0.06) 47%, transparent 52%),
+    radial-gradient(circle at 0% 50%, transparent 46%, rgba(212, 171, 78, 0.06) 47%, transparent 52%),
+    radial-gradient(circle at 100% 50%, transparent 46%, rgba(212, 171, 78, 0.06) 47%, transparent 52%);
+  background-size: 56px 56px;
+}
+
+/* Difuminado de fotos hacia fondo negro */
+.photo-fade {
+  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+}
